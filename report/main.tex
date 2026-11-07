@@ -1,0 +1,36 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\input{preamble}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\input{title}
+\clearpage
+\setcounter{page}{2}
+\pagestyle{plain}
+
+\tableofcontents
+
+\clearpage
+\input{sections/01_problem}
+
+\clearpage
+\input{sections/02_algorithm}
+
+\clearpage
+\input{sections/03_implementation}
+
+\clearpage
+\input{sections/04_experiments}
+
+\clearpage
+\section{Список использованных источников}
+\nocite{*}
+\printbibliography[heading=none]
+
+% Подключайте приложения только после появления проверенного содержимого:
+% \clearpage
+% \input{appendices/appendix-a}
+
+\end{document}
