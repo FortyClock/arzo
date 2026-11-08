@@ -1,18 +1,15 @@
-% Заполните значения, не меняя разметку титульного листа.
 \newcommand{\ReportMinistry}{МИНОБРНАУКИ РОССИИ}
-\newcommand{\ReportUniversity}{Федеральное государственное автономное образовательное учреждение высшего образования «Санкт-Петербургский государственный электротехнический университет „ЛЭТИ“ им. В.~И.~Ульянова (Ленина)»}
-\newcommand{\ReportDepartment}{[КАФЕДРА]}
+\newcommand{\ReportUniversity}{Федеральное государственное автономное образовательное учреждение высшего образования Санкт-Петербургский государственный электротехнический университет «ЛЭТИ» им. В.~И.~Ульянова (Ленина)}
 \newcommand{\ReportDiscipline}{Алгоритмы решения задач оптимизации}
 \newcommand{\ReportTopic}{Решение задач линейного программирования с помощью симплекс-метода}
-\newcommand{\ReportGroup}{[ГРУППА]}
+\newcommand{\ReportGroup}{2304}
 \newcommand{\ReportStudentOne}{Фролов Кирилл Михайлович}
 \newcommand{\ReportStudentTwo}{Почекунин Алексей Петрович}
 \newcommand{\ReportStudentThree}{Славкин Данил Сергеевич}
 \newcommand{\ReportStudentFour}{Пархоменко Марк Сергеевич}
-\newcommand{\ReportTeacher}{[ФИО преподавателя]}
 \newcommand{\ReportYear}{2026}
 
-\hypersetup{pdftitle={\ReportTopic}}
+\hypersetup{pdftitle={\ReportTopic. Часть 1}}
 
 \begin{titlepage}
   \thispagestyle{empty}
@@ -22,12 +19,9 @@
     \vspace{0.5\baselineskip}
     \ReportUniversity
 
-    \vspace{0.5\baselineskip}
-    Кафедра \ReportDepartment
-
     \vfill
 
-    \textbf{ОТЧЁТ\\по индивидуальному заданию № 9}
+    \textbf{ОТЧЁТ\\по индивидуальному заданию № 9\\Часть 1}
 
     \vspace{1.5\baselineskip}
     по дисциплине «\ReportDiscipline»
@@ -38,16 +32,15 @@
 
   \vfill
 
-  \noindent
-  \begin{tabularx}{\textwidth}{@{}l l >{\raggedright\arraybackslash}X@{}}
-    Студент группы \ReportGroup & \rule{3cm}{0.4pt} & \ReportStudentOne \\
-    Студент группы \ReportGroup & \rule{3cm}{0.4pt} & \ReportStudentTwo \\
-    Студент группы \ReportGroup & \rule{3cm}{0.4pt} & \ReportStudentThree \\
-    Студент группы \ReportGroup & \rule{3cm}{0.4pt} & \ReportStudentFour \\
-    & {\small подписи} & \\
-    Проверил & \rule{3cm}{0.4pt} & \ReportTeacher \\
-    & {\small подпись} &
-  \end{tabularx}
+  \noindent\hfill
+  \begin{minipage}{0.60\textwidth}
+    \raggedright
+    Студенты группы \ReportGroup\\[0.5\baselineskip]
+    \ReportStudentOne\\
+    \ReportStudentTwo\\
+    \ReportStudentThree\\
+    \ReportStudentFour
+  \end{minipage}
 
   \vfill
 

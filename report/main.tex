@@ -2,6 +2,7 @@
 
 \input{preamble}
 \addbibresource{references.bib}
+\DeclareFieldFormat{labelnumberwidth}{#1}
 
 \begin{document}
 
@@ -16,20 +17,6 @@
 \input{sections/01_problem}
 
 \clearpage
-\input{sections/02_algorithm}
-
-\clearpage
-\input{sections/03_implementation}
-
-\clearpage
-\input{sections/04_experiments}
-
-\clearpage
-\section{Перечень использованных источников}
-\printbibliography[heading=none]
-
-% Подключайте приложения только после появления проверенного содержимого:
-% \clearpage
-% \input{appendices/appendix-a}
+\printbibliography[heading=bibintoc,title={Перечень использованных источников}]
 
 \end{document}
