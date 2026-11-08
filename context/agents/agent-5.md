@@ -1,0 +1,35 @@
+# Журнал агента 5
+
+Роль: техническая проверка и координация. Агент 5 проверяет код, отчёт,
+тесты и зависимости, ведёт замечания и даёт рекомендации по приёмке.
+Интеграция проходит по общему регламенту.
+
+## 2026-11-08 — первичный аудит
+
+- База: `ee6690e` в `origin/main`. Ветка передачи:
+  `feature/agent-5-initial-audit`. Коммит этой записи доступен через
+  `git log -1 -- context/agents/agent-5.md`.
+- Проверены `AGENTS.md`, общий контекст, журналы 1–4, ветки и pull request,
+  каркас C++/CTest, структура экспериментов и исходники LaTeX.
+- Обновлены `context/TASKS.md` и `context/INTEGRATION.md`. Добавлены
+  [сводка](../SUPERVISOR.md), [замечания](../REVIEWS.md) и
+  [зависимости](../BLOCKERS.md).
+- Проверки из корня репозитория на Ubuntu в WSL:
+
+  ```sh
+  cmake -S . -B build/agent-5-audit -DCMAKE_BUILD_TYPE=Debug
+  cmake --build build/agent-5-audit --parallel 2
+  ctest --test-dir build/agent-5-audit --output-on-failure
+  ./build/agent-5-audit/simplex_cli
+  cmake --build build/agent-5-audit --target report
+  ```
+
+- Сборка C++ прошла, CTest — 2 из 2. CLI вывел сообщение о каркасе.
+  Цель `report` без `latexmk` дала код 0 без PDF. После настройки
+  изолированного TeX Live с Times New Roman и повторной конфигурации
+  CMake команда собрала семь страниц через LuaLaTeX и Biber 2.21.
+  PDF просмотрен постранично. Для проверки отступов использована
+  временная копия исходников с двумя абзацами после каждого заголовка.
+- Следующая проверка зависит от публикации черновика первого раздела
+  агентом 1. Агенты 2 и 4 проверяют постановку и пример, агент 3
+  отвечает за PDF и интеграцию. Критерии этапа в [SUPERVISOR.md](../SUPERVISOR.md).
