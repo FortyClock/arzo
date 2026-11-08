@@ -21,16 +21,21 @@
 }
 
 \usepackage{setspace}
+\let\ReportClassNormalSize\normalsize
+\renewcommand{\normalsize}{\ReportClassNormalSize\fontsize{14pt}{16.8pt}\selectfont}
 \onehalfspacing
 \setlength{\parindent}{1.25cm}
 \setlength{\parskip}{0pt}
 
 \usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
 % В классе article нумерация формул сквозная по умолчанию.
 \renewcommand{\theequation}{\arabic{equation}}
 
 \usepackage{graphicx}
 \graphicspath{{figures/}}
+\usepackage{tikz}
 \usepackage{caption}
 \DeclareCaptionLabelSeparator{endash}{~--~}
 \captionsetup{
@@ -55,24 +60,24 @@
 \titleformat{\subsection}
   {\normalfont\bfseries\fontsize{14pt}{21pt}\selectfont}
   {\thesubsection}{1em}{}
-\titlespacing*{\section}{0pt}{0pt}{21pt}
-\titlespacing*{\subsection}{0pt}{21pt}{21pt}
+\titlespacing{\section}{0pt}{0pt}{21pt}
+\titlespacing{\subsection}{0pt}{21pt}{21pt}
 
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
   \fancyhf{}
+  % Компенсация разницы левого и правого полей для центра листа.
+  \fancyfootoffset[L]{20mm}
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
 
 \usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\AtBeginBibliography{\raggedright}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
+\urlstyle{same}
 \usepackage[nameinlink,noabbrev]{cleveref}
 
 \addto\captionsrussian{%

@@ -17,6 +17,7 @@ enum class SolveStatus {
     unbounded,
     iteration_limit,
     invalid_input,
+    numerical_failure,
 };
 
 struct LinearProgram {
@@ -54,6 +55,8 @@ struct SolveResult {
         return "iteration_limit";
     case SolveStatus::invalid_input:
         return "invalid_input";
+    case SolveStatus::numerical_failure:
+        return "numerical_failure";
     }
     return "invalid_input";
 }

@@ -34,7 +34,9 @@ if(SIMPLEX_BUILD_TESTS)
 endif()
 
 find_program(LATEXMK_EXECUTABLE latexmk)
-if(LATEXMK_EXECUTABLE)
+find_program(LUALATEX_EXECUTABLE lualatex)
+find_program(BIBER_EXECUTABLE biber)
+if(LATEXMK_EXECUTABLE AND LUALATEX_EXECUTABLE AND BIBER_EXECUTABLE)
     add_custom_target(report
         COMMAND ${CMAKE_COMMAND} -E make_directory
                 ${CMAKE_CURRENT_BINARY_DIR}/texmf-cache
@@ -50,7 +52,8 @@ if(LATEXMK_EXECUTABLE)
 else()
     add_custom_target(report
         COMMAND ${CMAKE_COMMAND} -E echo
-                "latexmk not found; install TeX Live, latexmk and Biber"
+                "Report requires LuaLaTeX, latexmk and Biber."
+        COMMAND ${CMAKE_COMMAND} -E false
         VERBATIM
     )
 endif()
